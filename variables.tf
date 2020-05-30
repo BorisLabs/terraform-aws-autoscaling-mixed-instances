@@ -309,6 +309,12 @@ variable "spot_allocation_strategy" {
   default     = "capacity-optimized"
 }
 
+variable "max_instance_lifetime" {
+  description = "The maximum amount of time, in seconds, that an instance can be in service, values must be either equal to 0 or between 604800 and 31536000 seconds."
+  type        = number
+  default     = 0
+}
+
 variable "spot_instance_pools" {
   description = "Number of Spot pools per availability zone to allocate capacity. EC2 Auto Scaling selects the cheapest Spot pools and evenly allocates Spot capacity across the number of Spot pools that you specify. Diversifies your Spot capacity across multiple instance types to find the best pricing."
   type        = number
